@@ -22,7 +22,10 @@ to note tasks.
 ```
 git clone https://github.com/bmltp/My-Tasks-List.git
 ```
-* cd My-Task-List
+* Enter to project
+```
+cd My-Task-List
+```
 * Copy .env.example to .env and modify depending on your needs.
 ```
 cp .env.example .env
@@ -54,12 +57,12 @@ npm install
 ```
 php artisan migrate
 ```
-* To initial some users and Tasks run:
+* Initialise some users and Tasks run:
 ```
 php artisan db:seed
 ```
 (Email: user1@mail.com, Password: password)
-* To generate keys:
+* Generate keys:
 ```
 php artisan key:generate
 php artisan passport:install
@@ -76,14 +79,17 @@ npm run dev
 ```
 php artisan serve
 ```
+* Open http://localhost:8000
+
 * To stop server:
 ```
 Ctrl+c
 ```
-* If you want to access within local network run:
+* Access within local network run:
 ```
 php artisan serve --host=0.0.0.0
 ```
+* Open http://IP-of-host:8000 to browse.
 * After changes in files:
 ```
 npm run dev && php artisan serve
