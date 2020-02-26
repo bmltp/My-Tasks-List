@@ -16,7 +16,16 @@ to note tasks.
 
 ### Installation
 
-* Install PHP >= 7.2 : installation may vary depending on operating system.
+* Install PHP >= 7.2 : make sure the php extension zip, mbstring, xml, and sqlite3 are installed (installation may vary depending on operating system).
+For example for Debian(GNU/Linux) (for this date: 26 Feb 2020):
+```
+sudo apt install php7.3 php7.3-zip php7.3-mbstring php7.3-xml php7.3-sqlite3
+```
+or
+Just for extension:
+``` sudo apt install php-zip php-mbstring php-xml php-sqlite3 ```
+ may work.
+
 * Install <a href='https://getcomposer.org/download/'>Composer</a> and <a href='https://nodejs.org/en/download/'>NPM</a>.
 * Download Zip or clone repository.
 ```
@@ -24,7 +33,7 @@ git clone https://github.com/bmltp/My-Tasks-List.git
 ```
 * Enter to project
 ```
-cd My-Task-List
+cd My-Tasks-List
 ```
 * Copy .env.example to .env and modify depending on your needs.
 ```
@@ -39,7 +48,7 @@ DB_DATABASE=laravel
 DB_USERNAME=root
 DB_PASSWORD=
 ```
-* To:
+Change to :
 ```
 DB_CONNECTION=sqlite
 ```
@@ -65,15 +74,10 @@ php artisan db:seed
 * Generate keys:
 ```
 php artisan key:generate
+```
+For API run:
+```
 php artisan passport:install
-php artisan passport:client --personal
-```
-Example: personal access client [Laravel Personal Access Client]:>
- > MyApp
-
-* Run all Mix tasks:
-```
-npm run dev
 ```
 * Run PHP server:
 ```
@@ -90,18 +94,11 @@ Ctrl+c
 php artisan serve --host=0.0.0.0
 ```
 * Open http://IP-of-host:8000 to browse.
-* After changes in files:
-```
-npm run dev && php artisan serve
-```
 
 ## Tips
 
 If you face any issue then try to <a href="https://github.com/dessant/clear-browsing-data">Clear Browsing Data</a> or restart server and web browser.
-```
-Ctrl+c
-npm run dev && php artisan serve
-```
+
 ## Security Issues
 
 * HTTP only
