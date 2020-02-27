@@ -5,13 +5,13 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class=" card">
-                <div class=" text-center card-header">{{ __('Login') }}</div>
+            <div class="text-center card">
+              <a class="btn btn-primary" href="/">Home</a>
+                <div class="text-center card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
-
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
@@ -39,7 +39,7 @@
                                 @enderror
                             </div>
                         </div>
-                    
+
                         <div class=" text-center form-group row">
                             <div class="ccol-xs-12 col-sm-12 col-md-12">
                                 <div class=" form-check">
@@ -66,7 +66,7 @@
                                 <div >
                                     <a class="btn btn-info" href="{{ route('register') }}">Register</a>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </form>

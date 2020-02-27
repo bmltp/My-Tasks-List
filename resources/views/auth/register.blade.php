@@ -5,7 +5,8 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class=" text-center card">
+            <div class="text-center card">
+              <a class="btn btn-primary" href="/">Home</a>
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
