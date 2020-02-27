@@ -12,13 +12,13 @@ class UserController extends Controller
 {
     public function register(Request $request)
     {
-        $validator = Validator::make($request->all(), [ 
+        $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
         ]);
 
-        if ($validator->fails()) { 
+        if ($validator->fails()) {
             return response()->json([
                 'error'=>$validator->errors(),
                 'success'=>false,
@@ -34,14 +34,13 @@ class UserController extends Controller
         $user->save();
         $userDetails['name'] =  $user->name;
         $userDetails['token'] = $user->createToken('MyApp')->accessToken;
-        
+
         return response()->json([
             'success'=>true,
-            'message'=>'Registration Successful',
+            'message'=>'Successfully registred',
             'status'=> 200,
             'user'=>$userDetails
         ]);
-
     }
 
     public function login(Request $request)
@@ -53,7 +52,7 @@ class UserController extends Controller
         if(!Auth::attempt(['email' => request('email'), 'password' => request('password')])){
             return response()->json([
                 'success'=>false,
-                'message' => 'Invalid Email or Password',
+                'message' => 'Login failed. Invalid Email and/or Password',
                 'status'=> 401
             ]);
         }
@@ -62,24 +61,24 @@ class UserController extends Controller
         $userDetails['token'] =  $user->createToken('MyApp')-> accessToken;
             return response()->json([
                 'success'=>true,
-                'message'=>'Login Successful',
+                'message'=>'Successfully logged-in.',
                 'status'=> 200,
                 'user'=>$userDetails
             ]);
     }
 
-    
+
     public function logout(Request $request)
     {
         $request->user()->token()->revoke();
-        
+
         return response()->json([
             'success'=>true,
             'status'=> 200,
-            'message' => 'Successfully logged out.'
+            'message' => 'Successfully logged-out.'
         ]);
     }
-  
+
     /**
      * Get the authenticated User
      *

@@ -137,7 +137,7 @@ componentWillUnmount() {
       }
     }).then(res => {
       if (res.data.success == true) {
-        console.log('Successfully logout.')
+        console.log(res.data.message);
       }
     }).catch(err => {
       console.log(err)
@@ -205,7 +205,7 @@ componentWillUnmount() {
               </div>
           </div>
         <div className="row justify-content-center">
-            {tasklist}        
+            {tasklist}
         </div>
       </div>
     );
