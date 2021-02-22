@@ -54,6 +54,7 @@
                         <td>{{$task->status}}</td>
                         <td>{{$task->dueDate}}</td>
                         <td>
+                            <a onclick="event.preventDefault();showTaskForm({{$task->id}});" href="#" class="show open-modal btn btn-success" data-toggle="modal" value="{{$task->id}}">Show</a>
                             <a onclick="event.preventDefault();editTaskForm({{$task->id}});" href="#" class="edit open-modal btn btn-primary" data-toggle="modal" value="{{$task->id}}">Edit</a>
                             <a onclick="event.preventDefault();deleteTaskForm({{$task->id}});" href="#" class="delete btn btn-warning" data-toggle="modal">Delete</a>
                         </td>

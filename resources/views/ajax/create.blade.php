@@ -55,10 +55,10 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <input class="btn btn-default" data-dismiss="modal" type="button" value="Cancel">
                     <button class="btn btn-info" id="addButton" type="button" value="add">
                         Add New Task
-                    </button>
+                    </button> 
+                    <input class="btn btn-default" data-dismiss="modal" type="button" value="Cancel">
                     </input>
                 </div>
             </form>

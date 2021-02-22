@@ -91,6 +91,24 @@ function addTaskForm() {
     });
 }
 
+function showTaskForm(task_id) {
+    $.ajax({
+        type: 'GET',
+        url: '/ajax/ajax/' + task_id,
+        success: function (data) {
+            $("#showForm input[name=title]").val(data.task.title);
+            $("#showForm input[name=description]").val(data.task.description);
+            $("#showForm select[name=status]").val(data.task.status);
+            $("#showForm input[name=dueDate]").val(data.task.dueDate);
+            ``
+            $("#showForm input[name=task_id]").val(data.task.id);
+            $('#showModal').modal('show');
+        },
+        error: function (data) {
+            console.log(data);
+        }
+    });
+}
 function editTaskForm(task_id) {
     $.ajax({
         type: 'GET',
